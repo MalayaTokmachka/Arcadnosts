@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Змейка — Мини Игры</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="screen active">
+
+  <header class="site-header">
+    <div class="logo">🎮 МИНИ ИГРЫ</div>
+    <button class="back-btn" onclick="stopSnake(); location.href='index.html'">◄ МЕНЮ</button>
+  </header>
+
+  <div class="game-content">
+    <div class="game-title" style="color:#33ff44">Змейка</div>
+    <div class="game-status" id="snake-status">Нажми ПРОБЕЛ или кнопку ниже</div>
+
+    <div class="score-bar">
+      <div>Счёт: <strong id="snake-score">0</strong></div>
+      <div>Рекорд: <strong id="snake-best">0</strong></div>
+    </div>
+
+    <canvas id="snake-canvas" width="400" height="400"></canvas>
+
+    <button class="btn snake-restart" onclick="startSnake()">▶ СТАРТ / ЗАНОВО</button>
+
+    <div class="snake-controls">
+      <button class="ctrl-btn ctrl-up"    onclick="snakeDir(0, -1)">▲</button>
+      <button class="ctrl-btn ctrl-left"  onclick="snakeDir(-1, 0)">◄</button>
+      <button class="ctrl-btn ctrl-down"  onclick="snakeDir(0,  1)">▼</button>
+      <button class="ctrl-btn ctrl-right" onclick="snakeDir(1,  0)">►</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Всплывающее окно -->
+<div class="overlay" id="overlay">
+  <div class="overlay-box" id="overlay-box">
+    <div class="overlay-emoji" id="overlay-emoji">💀</div>
+    <div class="overlay-title" id="overlay-title">КОНЕЦ ИГРЫ!</div>
+    <div class="overlay-sub" id="overlay-sub"></div>
+    <button class="btn" id="overlay-btn" style="background:#33ff44;color:#000">▶ Ещё раз</button>
+    <button class="btn" onclick="closeOverlay(); stopSnake(); location.href='index.html'"
+            style="background:transparent;border:2px solid #445566;color:#8899bb">◄ Меню</button>
+  </div>
+</div>
+
+<script src="snake.js"></script>
+</body>
+</html>

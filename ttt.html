@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Крестики-Нолики — Мини Игры</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="screen active">
+
+  <header class="site-header">
+    <div class="logo">🎮 МИНИ ИГРЫ</div>
+    <button class="back-btn" onclick="location.href='index.html'">◄ МЕНЮ</button>
+  </header>
+
+  <div class="game-content">
+    <div class="game-title">Крестики-Нолики</div>
+    <div class="game-status" id="ttt-status">Выберите режим</div>
+
+    <div class="ttt-mode">
+      <button class="mode-btn active" id="ttt-pvp" onclick="setTTTMode('pvp')">👥 2 игрока</button>
+      <button class="mode-btn" id="ttt-ai" onclick="setTTTMode('ai')">🤖 Против ИИ</button>
+    </div>
+
+    <div class="score-bar">
+      <div>✕ Крест: <strong id="ttt-score-x">0</strong></div>
+      <div>Ничья: <strong id="ttt-score-d">0</strong></div>
+      <div>○ Ноль: <strong id="ttt-score-o">0</strong></div>
+    </div>
+
+    <div id="ttt-board"></div>
+
+    <button class="btn ttt-restart" onclick="resetTTT()">⟳ Заново</button>
+  </div>
+
+</div>
+
+<!-- Всплывающее окно -->
+<div class="overlay" id="overlay">
+  <div class="overlay-box" id="overlay-box">
+    <div class="overlay-emoji" id="overlay-emoji">🏆</div>
+    <div class="overlay-title" id="overlay-title">ПОБЕДА!</div>
+    <div class="overlay-sub" id="overlay-sub">Отличная игра!</div>
+    <button class="btn" id="overlay-btn" style="background:#00c8ff;color:#000">▶ Ещё раз</button>
+    <button class="btn" onclick="closeOverlay(); location.href='index.html'"
+            style="background:transparent;border:2px solid #445566;color:#8899bb">◄ Меню</button>
+  </div>
+</div>
+
+<script src="ttt.js"></script>
+</body>
+</html>

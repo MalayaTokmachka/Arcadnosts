@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мини Игры</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="screen active">
+
+  <header class="site-header">
+    <div class="logo">🎮 МИНИ ИГРЫ</div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-title">Arcadность</div>
+    <div class="hero-sub">Выбери игру</div>
+  </div>
+
+  <div class="cards">
+
+    <div class="game-card" onclick="location.href='ttt.html'">
+      <div class="card-icon">✕○</div>
+      <div class="card-title">Крестики-Нолики</div>
+      <div class="card-desc">Классическая игра 3×3<br>Против ИИ или друга</div>
+      <button class="play-btn">▶ ИГРАТЬ</button>
+    </div>
+
+    <div class="game-card game-card--snake" onclick="location.href='snake.html'">
+      <div class="card-icon">🐍</div>
+      <div class="card-title">Змейка</div>
+      <div class="card-desc">Управляй змейкой<br>Собирай еду, не врежься!</div>
+      <button class="play-btn">▶ ИГРАТЬ</button>
+    </div>
+
+    <div class="game-card game-card--ms" onclick="location.href='minesweeper.html'">
+      <div class="card-icon">💣</div>
+      <div class="card-title">Сапёр</div>
+      <div class="card-desc">Найди все мины<br>Осторожно — они везде!</div>
+      <button class="play-btn">▶ ИГРАТЬ</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

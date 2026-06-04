@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сапёр — Мини Игры</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="screen active">
+
+  <header class="site-header">
+    <div class="logo">🎮 МИНИ ИГРЫ</div>
+    <button class="back-btn" onclick="location.href='index.html'">◄ МЕНЮ</button>
+  </header>
+
+  <div class="game-content">
+    <div class="game-title" style="color:#ff4d8d">Сапёр</div>
+    <div class="game-status" id="ms-status">Левый клик — открыть, правый — флаг</div>
+
+    <div class="ms-difficulty">
+      <button class="diff-btn active" id="diff-easy"   onclick="setDiff('easy')">Лёгкий</button>
+      <button class="diff-btn"        id="diff-medium" onclick="setDiff('medium')">Средний</button>
+      <button class="diff-btn"        id="diff-hard"   onclick="setDiff('hard')">Сложный</button>
+    </div>
+
+    <div class="ms-info">
+      <div>💣 Мин: <strong id="ms-mines">0</strong></div>
+      <div>🚩 Флаги: <strong id="ms-flags">0</strong></div>
+      <div>⏱ Время: <strong id="ms-time">0</strong></div>
+    </div>
+
+    <div id="ms-board"></div>
+
+    <button class="btn ms-restart" onclick="initMS()">⟳ Новая игра</button>
+    <div class="ms-hint">
+      [ПК] Правый клик = флаг &nbsp;|&nbsp; [Моб] Долгое нажатие = флаг
+    </div>
+  </div>
+
+</div>
+
+<!-- Всплывающее окно -->
+<div class="overlay" id="overlay">
+  <div class="overlay-box" id="overlay-box">
+    <div class="overlay-emoji" id="overlay-emoji">🏆</div>
+    <div class="overlay-title" id="overlay-title">ПОБЕДА!</div>
+    <div class="overlay-sub" id="overlay-sub"></div>
+    <button class="btn" id="overlay-btn" style="background:#ff4d8d;color:#fff">▶ Ещё раз</button>
+    <button class="btn" onclick="closeOverlay(); location.href='index.html'"
+            style="background:transparent;border:2px solid #445566;color:#8899bb">◄ Меню</button>
+  </div>
+</div>
+
+<script src="minesweeper.js"></script>
+</body>
+</html>
